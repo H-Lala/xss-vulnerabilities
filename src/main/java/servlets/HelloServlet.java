@@ -19,7 +19,6 @@ public class HelloServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HashMap<String, Object> data = new HashMap<>();
-
         links.add("Name");
         data.put("links",links);
         freeMaker.render("hello.ftl", data, resp);
@@ -31,6 +30,7 @@ public class HelloServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Cookies cookies = new Cookies(req, resp);
         String name = req.getParameter("name");
+        name = name==null ? " " : name.replaceAll("<","&lt;").replaceAll(">","&gt;");
         Map<String, Object> data = new HashMap<>();
         data.put("links", links);
         data.put("name",name);

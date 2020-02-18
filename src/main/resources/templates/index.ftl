@@ -13,9 +13,12 @@
     <br>
     <input type="text" name="name">
     <input type="submit" value="Submit">
+   
+
 </form>
-<h1>
+ <h1>
     Hi, ${name}, you successfully logged in
 </h1>
+
 </body>
 </html>
