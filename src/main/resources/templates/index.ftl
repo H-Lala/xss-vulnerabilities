@@ -11,13 +11,22 @@
 <form method="post">
     <p>Please,write your name</p>
     <br>
+    <p>Your name is</p>
+    <br>
     <input type="text" name="name">
+    <br>
+    <p>Message</p>
+    <input type="text" name="text">
+    <br>
     <input type="submit" value="Submit">
    
 
 </form>
  <h1>
     Hi, ${name}, you successfully logged in
+</h1>
+<h1>
+    Message is  ${text}
 </h1>
 
 </body>

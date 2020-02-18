@@ -31,9 +31,12 @@ public class HelloServlet extends HttpServlet {
         Cookies cookies = new Cookies(req, resp);
         String name = req.getParameter("name");
         name = name==null ? " " : name.replaceAll("<","&lt;").replaceAll(">","&gt;");
+        String text = req.getParameter("text");
+        text = text==null? " ":text.replaceAll("<","&lt").replaceAll(">","&gt");
         Map<String, Object> data = new HashMap<>();
         data.put("links", links);
         data.put("name",name);
+        data.put("text",text);
         data.put("header", "Login result");
         freeMaker.render("index.ftl", data, resp);
 
